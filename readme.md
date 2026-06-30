@@ -43,12 +43,12 @@ http://localhost:3000
 
 
 ### 🚀 Key Features & Architectural Decisions
-Sequential Auto-Increment IDs: Every note is stamped with a static, progressive unique ID number (1, 2, 3...) to maintain permanent reference paths, preventing index-shifting bugs.
+Sequential Auto-Increment IDs: Every note has a static, progressive unique ID number to maintain permanent reference paths, preventing index-shifting errors.
 
--True Partial Updates: The PATCH handler selectively evaluates fields, updating only what is provided in the payload and preventing existing properties from being overwritten with undefined.
+-True Partial Updates: The PATCH API handles partial updates by only updating what is changed. For eg: If only description is updated then the title will remain same and only description will be uodated without causing error.
 
--Contiguous Deletions: Uses .findIndex() and .splice() to safely slide data objects together upon deletion, eliminating array "holes".
+-Contiguous Deletions: Uses .findIndex() and .splice() to safely slides data upon deletion, eliminating array "holes" or "null".
 
--Structured Error Responses: Rejects malformed bodies or non-existent IDs gracefully using unified error tracking templates (e.g., 400 Bad Request, 404 Not Found).
+-Error Responses: Rejects malformed bodies or non-existenting IDs using error tracking status codes (for eg: 400 Bad Request, 404 Not Found).
 
--Input Sanitization: Cleanses input strings by calling .trim() to prevent blank spaces or empty text bodies from polluting storage.
+-Data pre-processing: Pre-processes input data by using .trim() function to remove blank spaces or empty text bodies from taking unnecessary space in the data array.

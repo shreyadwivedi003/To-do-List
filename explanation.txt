@@ -1,7 +1,7 @@
 To-do List Api implementation:
 
 1.) In memory array
-For this project, I chose to store data using a standard, in-memory JavaScript array (`const notes = []`). Since this is a mini-task focused on mastering routing and HTTP methods, using an array let me skip the setup overhead of database connection drivers (like MongoDB). The obvious drawback is that this data is volatile; whenever the Express server restarts, the array clears to empty. For a production app, I would use such data that is persistent.
+For this project, I chose to store data using a standard, in-memory JavaScript array. Since this is a mini-task focused on mastering routing and HTTP methods, using an array let me skip the setup of database connection drivers (like MongoDB). The obvious drawback is that this data is volatile; whenever the Express server restarts, the array clears to empty. For a production app, I would use such data that is persistent.
 
 2.) Using unique Ids
 Initially, the endpoints targeted notes using their position in the array (`/notes/:index`). However, I realized this creates a massive data corruption flaw. If you delete an item at index 0, every single item behind it immediately shifts down one spot. If a client is interacting with a UI that hasn't refreshed instantly, sending an update or delete request to a specific index could target the wrong note entirely.
