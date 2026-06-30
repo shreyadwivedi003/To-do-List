@@ -54,7 +54,36 @@ app.delete('/notes/:id',(req,res)=>{
 })
 
 
+// Full update
+app.put('/notes/:id',(req,res)=>{
+    const target=parseInt(req.params.id,10);
+    const {title,description}=req.body;
 
+    const noteIndex= notes.findIndex(note=>note.id === target);
+    if(noteIndex === -1){
+        return res.status(404).json({
+            error:"note not found",
+            message:" note does not exist"
+        })
+    }
+    if(!title || typeof title != 'string' || title.trim() === ''){
+        return res.status(400).json({
+            error:"wrong request",
+            message:"Title is required"
+        })
+    }
+    notes[noteIndex]={
+        id: target,
+        title:title.trim(),
+        description:description && typeof description==='string' ?  description.trim : ""
+    };
+    res.status(200).json({
+        message:"Note was updated successfully",
+        note:note[noteIndex]
+    })
+})
+
+// Partial update
 app.patch('/notes/:id',(req,res)=>{
     const target=parseInt(req.params.id,10);
     
