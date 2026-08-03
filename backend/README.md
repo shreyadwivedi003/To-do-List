@@ -2,6 +2,8 @@
 
 A lightweight, robust RESTful API built with Node.js and Express for managing a to-do list or notes. This project handles full CRUD (Create, Read, Update, Delete) operations using an in-memory data store.
 
+Here's the API planning and specification document link : https://docs.google.com/document/d/1N0Oa9C49F72zVQ3vKYiiCD59nJAVXxg1CGUHjghFC_I/edit?usp=sharing
+
 ## 🚀 Features
 
 - **Create Notes**: Add new notes with titles and descriptions.
@@ -30,3 +32,29 @@ Make sure you have [Node.js](https://nodejs.org/) installed on your machine.
 ```bash
    git clone [https://github.com/shreyadwivedi003/to_do_list-Mini-Task-.git](https://github.com/shreyadwivedi003/to_do_list-Mini-Task-.git)
    cd to_do_list-Mini-Task-
+   ```
+
+### 🚀 How to Run:
+Before you begin, ensure you have Node.js and npm (Node Package Manager) installed. You can check if they are installed by running these commands in your terminal:
+
+- Step 1: Clone the Repository
+```bash
+git clone https://github.com/shreyadwivedi003/to_do_list-Mini-Task-.git
+cd to_do_list-Mini-Task-
+```
+
+- Step 2: Install Dependencies
+```bash
+npm init -y
+npm install express
+```
+
+- Step 3: Start the Server
+```bash
+node server.js
+```
+
+If you are planning to make changes to the code and don't want to manually restart the server every time you hit save, run this instead:
+```bash
+npx nodemon server.js
+```
