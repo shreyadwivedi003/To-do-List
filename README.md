@@ -33,27 +33,34 @@ A full-stack, responsive To-Do / Notes application built using the **MERN** stac
 
 ## 📁 Repository Structure
 
-```text
 To-do-List/
 ├── backend/
-│   ├── app.js (or server.js)
-│   ├── models/
-│   │   └── noteModel.js
-│   ├── routes/
-│   │   └── noteRoutes.js
+│   ├── src/
+│   │   ├── Controllers/
+│   │   │   └── controllers.js
+│   │   ├── models/
+│   │   │   └── notes.model.js
+│   │   ├── Routes/
+│   │   │   └── routes.js
+│   │   ├── services/
+│   │   │   └── todoService.js
+│   │   └── app.js
+│   ├── server.js
 │   ├── package.json
-│   └── .env.example
+│   └── .env
 │
 └── frontend/
     ├── src/
     │   ├── components/
+    │   │   ├── Create.jsx
+    │   │   ├── Edit.jsx
+    │   │   └── Home.jsx
     │   ├── App.jsx
     │   └── main.jsx
     ├── index.html
     ├── vite.config.js
     ├── package.json
-    └── .env.example
-```
+    └── .env
 
 ## ⚡ Features
 -Full CRUD Operations: Create, Read, Update, and Delete notes seamlessly.
@@ -101,6 +108,4 @@ Put environment variable VITE_API_URL=http://localhost:3000
 1. Import project into Vercel.
 2. Framework Preset: Vite.
 3. Set Root Directory to frontend.
-4. Add environment variable VITE_API_URL pointing to your deployed Render URL.
-
-### Hope you found this helpful!
+4. Add environment variable VITE_API pointing to your deployed Render URL.
