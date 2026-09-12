@@ -17,13 +17,14 @@ const Create = ({ onNoteCreated }) => {
     }
 
     try {
-      const response = await axios.post(`${BASE_URL}/create-post`, {
+      const response = await axios.post(`${BASE_URL}/api/tasks`, {
         title: title.trim(),
         description: description.trim(),
+        status:"pending"
       });
 
       if (onNoteCreated) {
-        onNoteCreated(response.data.note);
+        onNoteCreated(response.data.data);
       }
 
       setTitle("");

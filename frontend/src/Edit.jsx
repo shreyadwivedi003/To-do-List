@@ -10,20 +10,19 @@ const Edit = ({ note, onUpdateSuccess, onCancel }) => {
 
   const handleUpdate = async (e) => {
     e.preventDefault();
-
     if (!title.trim()) {
       setError("Title cannot be empty");
       return;
     }
 
     try {
-      const response = await axios.patch(`${BASE_URL}/notes/${note._id}`, {
+      const response = await axios.put(`${BASE_URL}/api/tasks/${note._id}`, {
         title: title.trim(),
         description: description.trim(),
       });
 
       if (onUpdateSuccess) {
-        onUpdateSuccess(response.data.note);
+        onUpdateSuccess(response.data.data);
       }
     } catch (err) {
       setError("Failed to update note");
