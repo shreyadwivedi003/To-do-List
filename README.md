@@ -32,7 +32,7 @@ A full-stack, responsive To-Do / Notes application built using the **MERN** stac
 ---
 
 ## 📁 Repository Structure
-
+``
 To-do-List/
 ├── backend/
 │   ├── src/
@@ -61,6 +61,7 @@ To-do-List/
     ├── vite.config.js
     ├── package.json
     └── .env
+    ``
 
 ## ⚡ Features
 -Full CRUD Operations: Create, Read, Update, and Delete notes seamlessly.
